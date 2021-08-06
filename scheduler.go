@@ -79,8 +79,9 @@ func (s *Scheduler) Stop(_ ...option) {
 	}
 }
 
-func (s *Scheduler) Remove(id optionId) {
+func (s *Scheduler) Remove(id *optionId) {
 	if entryId, ok := s.idCache.Load(id.id); ok {
 		s.cron.Remove(entryId.(cron.EntryID))
+		s.idCache.Delete(id.id)
 	}
 }
