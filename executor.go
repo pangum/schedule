@@ -1,5 +1,5 @@
 package schedule
 
 type executor interface {
-	run()
+	Run() (err error)
 }

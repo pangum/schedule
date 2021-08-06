@@ -1,6 +1,8 @@
 package schedule
 
 import (
+	`fmt`
+	`strconv`
 	`sync`
 
 	`github.com/robfig/cron/v3`
@@ -16,14 +18,17 @@ type Scheduler struct {
 	stopped bool
 }
 
-func newScheduler() *Scheduler {
-	return &Scheduler{
-		cron:    cron.New(),
+func newScheduler() (scheduler *Scheduler) {
+	scheduler = &Scheduler{
+		cron:    cron.New(cron.WithSeconds()),
 		idCache: sync.Map{},
 
 		started: false,
 		stopped: false,
 	}
+	scheduler.Start()
+
+	return
 }
 
 func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error) {
@@ -40,23 +45,42 @@ func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error
 	switch options.scheduleType {
 	case scheduleTypeCron:
 		entryId, err = s.cron.AddFunc(options.cron, func() {
-			executor.run()
+			_ = executor.Run()
+		})
+	case scheduleTypeDuration:
+		entryId, err = s.cron.AddFunc(fmt.Sprintf("@every %s", options.duration.String()), func() {
+			_ = executor.Run()
+		})
+	case scheduleTypeTime:
+		entryId, err = s.cron.AddFunc(fixTimeSpec(options.time, options.delay), func() {
+			_ = executor.Run()
 		})
 	}
+	if nil != err {
+		return
+	}
+	id = strconv.Itoa(int(entryId))
+	s.idCache.Store(id, entryId)
 
 	return
 }
 
-func (s *Scheduler) Start(opts ...option) {
+func (s *Scheduler) Start(_ ...option) {
 	if !s.started {
 		s.cron.Start()
 		s.started = true
 	}
 }
 
-func (s *Scheduler) Stop(opts ...option) {
+func (s *Scheduler) Stop(_ ...option) {
 	if !s.stopped {
 		s.cron.Stop()
 		s.stopped = true
+	}
+}
+
+func (s *Scheduler) Remove(id optionId) {
+	if entryId, ok := s.idCache.Load(id.id); ok {
+		s.cron.Remove(entryId.(cron.EntryID))
 	}
 }
