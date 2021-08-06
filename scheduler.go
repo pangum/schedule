@@ -52,7 +52,7 @@ func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error
 			_ = executor.Run()
 		})
 	case scheduleTypeTime:
-		entryId, err = s.cron.AddFunc(fixTimeSpec(options.time, options.delay), func() {
+		entryId, err = s.cron.AddFunc(fixTimeSpec(options.time, options.delayMaxRand, options.delay), func() {
 			_ = executor.Run()
 		})
 	}

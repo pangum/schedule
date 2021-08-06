@@ -7,16 +7,17 @@ import (
 type options struct {
 	scheduleType scheduleType
 
-	cron     string
-	time     time.Time
-	delay    int64
-	duration time.Duration
+	cron         string
+	time         time.Time
+	delayMaxRand int64
+	delay        time.Duration
+	duration     time.Duration
 
 	id string
 }
 
 func defaultOptions() *options {
 	return &options{
-		delay: 10,
+		delayMaxRand: 10,
 	}
 }
