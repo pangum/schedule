@@ -32,27 +32,27 @@ func newScheduler() (scheduler *Scheduler) {
 }
 
 func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error) {
-	options := defaultOptions()
+	_options := defaultOptions()
 	for _, opt := range opts {
-		opt.apply(options)
+		opt.apply(_options)
 	}
 
-	if "" == options.id {
+	if "" == _options.id {
 		id = xid.New().String()
 	}
 
 	var entryId cron.EntryID
-	switch options.scheduleType {
+	switch _options.scheduleType {
 	case scheduleTypeCron:
-		entryId, err = s.cron.AddFunc(options.cron, func() {
+		entryId, err = s.cron.AddFunc(_options.cron, func() {
 			_ = executor.Run()
 		})
 	case scheduleTypeDuration:
-		entryId, err = s.cron.AddFunc(fmt.Sprintf("@every %s", options.duration.String()), func() {
+		entryId, err = s.cron.AddFunc(fmt.Sprintf("@every %s", _options.duration.String()), func() {
 			_ = executor.Run()
 		})
 	case scheduleTypeTime:
-		entryId, err = s.cron.AddFunc(fixTimeSpec(options.time, options.delayMaxRand, options.delay), func() {
+		entryId, err = s.cron.AddFunc(fixTimeSpec(_options.time, _options.delayMaxRand, _options.delay), func() {
 			_ = executor.Run()
 		})
 	}
