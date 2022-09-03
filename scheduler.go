@@ -1,12 +1,12 @@
 package schedule
 
 import (
-	`fmt`
-	`strconv`
-	`sync`
+	"fmt"
+	"strconv"
+	"sync"
 
-	`github.com/robfig/cron/v3`
-	`github.com/rs/xid`
+	"github.com/robfig/cron/v3"
+	"github.com/rs/xid"
 )
 
 // Scheduler 任务计划组织程序
@@ -37,7 +37,7 @@ func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error
 		opt.apply(_options)
 	}
 
-	if "" == _options.id {
+	if `` == _options.id {
 		id = xid.New().String()
 	}
 

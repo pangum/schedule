@@ -1,10 +1,14 @@
 package schedule
 
 import (
-	`time`
+	"time"
 )
 
-var _ option = (*optionTime)(nil)
+var (
+	_        = Time
+	_        = DurationTime
+	_ option = (*optionTime)(nil)
+)
 
 type optionTime struct {
 	time time.Time
