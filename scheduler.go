@@ -11,8 +11,8 @@ import (
 
 // Scheduler 任务计划组织程序
 type Scheduler struct {
-	cron    *cron.Cron
-	idCache sync.Map
+	cron *cron.Cron
+	ids  *sync.Map
 
 	started bool
 	stopped bool
@@ -20,8 +20,8 @@ type Scheduler struct {
 
 func newScheduler() (scheduler *Scheduler) {
 	scheduler = &Scheduler{
-		cron:    cron.New(cron.WithSeconds()),
-		idCache: sync.Map{},
+		cron: cron.New(cron.WithSeconds()),
+		ids:  new(sync.Map),
 
 		started: false,
 		stopped: false,
@@ -60,7 +60,7 @@ func (s *Scheduler) Add(executor executor, opts ...option) (id string, err error
 		return
 	}
 	id = strconv.Itoa(int(entryId))
-	s.idCache.Store(id, entryId)
+	s.ids.Store(id, entryId)
 
 	return
 }
@@ -80,8 +80,21 @@ func (s *Scheduler) Stop(_ ...option) {
 }
 
 func (s *Scheduler) Remove(id *optionId) {
-	if entryId, ok := s.idCache.Load(id.id); ok {
-		s.cron.Remove(entryId.(cron.EntryID))
-		s.idCache.Delete(id.id)
+	if _id, ok := s.ids.Load(id.id); ok {
+		s.cron.Remove(_id.(cron.EntryID))
+		s.ids.Delete(id.id)
 	}
+}
+
+func (s *Scheduler) Clear() {
+	for _, entry := range s.cron.Entries() {
+		s.cron.Remove(entry.ID)
+	}
+	s.ids = new(sync.Map)
+}
+
+func (s *Scheduler) Contains(id *optionId) (contains bool) {
+	_, contains = s.ids.Load(id.id)
+
+	return
 }
