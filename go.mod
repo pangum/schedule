@@ -19,7 +19,7 @@ require (
 	github.com/goexl/exc v0.0.4 // indirect
 	github.com/goexl/gfx v0.0.8 // indirect
 	github.com/goexl/gox v0.0.9 // indirect
-	github.com/goexl/mengpo v0.1.7 // indirect
+	github.com/goexl/mengpo v0.1.9 // indirect
 	github.com/goexl/simaqian v0.1.3 // indirect
 	github.com/goexl/xiren v0.0.3 // indirect
 	github.com/google/uuid v1.3.0 // indirect
@@ -37,6 +37,6 @@ require (
 	go.uber.org/zap v1.23.0 // indirect
 	golang.org/x/crypto v0.0.0-20220829220503-c86fa9a7ed90 // indirect
 	golang.org/x/sys v0.0.0-20220829200755-d48e67d00261 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/text v0.3.8 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
