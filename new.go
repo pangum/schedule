@@ -17,6 +17,9 @@ func newScheduler(config *pangu.Config, logger *logging.Logger) (scheduler *Sche
 	if _schedule.Unique {
 		builder.Unique()
 	}
+	if 0 != _schedule.Delay {
+		builder.Delay(_schedule.Delay)
+	}
 	scheduler = builder.Build()
 
 	return
