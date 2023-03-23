@@ -6,14 +6,14 @@ import (
 	"github.com/pangum/pangu"
 )
 
-func newScheduler(config *pangu.Config, logger *logging.Logger) (scheduler *Scheduler, err error) {
+func newScheduler(config *pangu.Config, logger logging.Logger) (scheduler *Scheduler, err error) {
 	conf := new(panguConfig)
 	if err = config.Load(conf); nil != err {
 		return
 	}
 
 	_schedule := conf.Schedule
-	builder := schedule.New().Logger(logger.Logger)
+	builder := schedule.New().Logger(logger)
 	if _schedule.Unique {
 		builder.Unique()
 	}
