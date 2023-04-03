@@ -3,7 +3,7 @@ module github.com/pangum/schedule
 go 1.19
 
 require (
-	github.com/goexl/schedule v0.1.2
+	github.com/goexl/schedule v0.1.5
 	github.com/pangum/logging v0.2.0
 	github.com/pangum/pangu v0.3.1
 )
@@ -20,13 +20,13 @@ require (
 	github.com/goexl/env v0.0.2 // indirect
 	github.com/goexl/exc v0.0.5 // indirect
 	github.com/goexl/gfx v0.1.7 // indirect
-	github.com/goexl/gox v0.3.0 // indirect
+	github.com/goexl/gox v0.3.1 // indirect
 	github.com/goexl/mengpo v0.2.4 // indirect
 	github.com/goexl/simaqian v0.2.4 // indirect
 	github.com/goexl/xiren v0.0.5 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/leodido/go-urn v1.2.2 // indirect
-	github.com/lufia/plan9stats v0.0.0-20230110061619-bbe2e5e100de // indirect
+	github.com/lufia/plan9stats v0.0.0-20230326075908-cb1d2100619a // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/power-devops/perfstat v0.0.0-20221212215047-62379fc7944b // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
