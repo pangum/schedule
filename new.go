@@ -7,15 +7,21 @@ import (
 )
 
 func newScheduler(config *pangu.Config, logger logging.Logger) (scheduler *Scheduler, err error) {
-	conf := new(panguConfig)
+	conf := new(wrapper)
 	if err = config.Load(conf); nil != err {
 		return
 	}
 
-	_schedule := conf.Schedule
+	wrap := conf.Schedule
 	builder := schedule.New().Logger(logger)
-	if _schedule.Unique {
+	if wrap.Unique {
 		builder.Unique()
+	}
+
+	// 全局限制条件
+	_limit := wrap.Limit
+	if nil != _limit {
+		builder.Limit().Cpu(_limit.Cpu).Memory(_limit.Memory).Process(_limit.Process).Max(_limit.Max).Build()
 	}
 	scheduler = builder.Build()
 

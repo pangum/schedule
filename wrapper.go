@@ -1,5 +1,5 @@
 package schedule
 
-type panguConfig struct {
+type wrapper struct {
 	Schedule config `json:"schedule" yaml:"schedule" xml:"schedule" toml:"schedule"`
 }
