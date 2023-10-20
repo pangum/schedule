@@ -1,6 +1,6 @@
-package schedule
+package config
 
-type limit struct {
+type Limit struct {
 	// 最大使用百分比
 	Cpu float64 `json:"cpu" yaml:"cpu" xml:"cpu" toml:"cpu"`
 	// 最大内存占用百分比
