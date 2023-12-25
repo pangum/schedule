@@ -3,7 +3,7 @@ module github.com/pangum/schedule
 go 1.21
 
 require (
-	github.com/goexl/log v0.0.5
+	github.com/goexl/log v0.0.7
 	github.com/goexl/schedule v0.1.8
 	github.com/pangum/pangu v0.3.9
 )
