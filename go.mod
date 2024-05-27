@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/goexl/log v0.0.7
-	github.com/goexl/schedule v0.1.9
+	github.com/goexl/schedule v0.2.0
 	github.com/pangum/pangu v0.4.6
 )
 
@@ -19,7 +19,6 @@ require (
 	github.com/go-playground/validator/v10 v10.20.0 // indirect
 	github.com/goexl/baozheng v0.0.1 // indirect
 	github.com/goexl/env v0.0.2 // indirect
-	github.com/goexl/exc v0.0.5 // indirect
 	github.com/goexl/exception v0.0.1 // indirect
 	github.com/goexl/gfx v0.1.7 // indirect
 	github.com/goexl/gox v0.4.6 // indirect
