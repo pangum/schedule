@@ -6,7 +6,7 @@ toolchain go1.23.1
 require (
 	github.com/goexl/log v0.0.7
 	github.com/goexl/schedule v0.2.0
-	github.com/pangum/pangu v1.5.6
+	github.com/pangum/pangu v1.5.7
 )
 
 require (
