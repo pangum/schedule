@@ -1,10 +1,8 @@
 module github.com/pangum/schedule
 
 go 1.22
-toolchain go1.24.1
-
 require (
-	github.com/goexl/log v0.0.7
+	github.com/goexl/log v0.0.9
 	github.com/goexl/schedule v0.2.0
 	github.com/pangum/pangu v1.5.8
 )
