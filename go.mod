@@ -5,7 +5,7 @@ toolchain go1.24.1
 
 require (
 	github.com/goexl/log v0.0.9
-	github.com/goexl/schedule v0.2.0
+	github.com/goexl/schedule v0.2.1
 	github.com/pangum/pangu v1.5.9
 )
 
@@ -28,7 +28,7 @@ require (
 	github.com/goexl/xiren v0.0.8 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
-	github.com/lufia/plan9stats v0.0.0-20240513124658-fba389f38bae // indirect
+	github.com/lufia/plan9stats v0.0.0-20250317134145-8bc96cf8fc35 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
@@ -38,10 +38,10 @@ require (
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/rs/xid v1.6.0 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
-	github.com/shirou/gopsutil/v3 v3.24.4 // indirect
+	github.com/shirou/gopsutil/v3 v3.24.5 // indirect
 	github.com/shoenig/go-m1cpu v0.1.6 // indirect
-	github.com/tklauser/go-sysconf v0.3.14 // indirect
-	github.com/tklauser/numcpus v0.8.0 // indirect
+	github.com/tklauser/go-sysconf v0.3.15 // indirect
+	github.com/tklauser/numcpus v0.10.0 // indirect
 	github.com/urfave/cli/v2 v2.27.6 // indirect
 	github.com/xrash/smetrics v0.0.0-20240521201337-686a1a2994c1 // indirect
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
