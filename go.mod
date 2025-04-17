@@ -1,12 +1,12 @@
-module github.com/pangum/schedule
+module github.com/harluo/schedule
 
-go 1.22
-toolchain go1.24.1
+go 1.24
 
 require (
 	github.com/goexl/log v0.0.9
 	github.com/goexl/schedule v0.2.1
-	github.com/pangum/pangu v1.6.0
+	github.com/harluo/boot v1.6.5
+	github.com/harluo/di v0.0.3
 )
 
 require (
@@ -21,18 +21,18 @@ require (
 	github.com/goexl/baozheng v0.0.1 // indirect
 	github.com/goexl/env v0.0.2 // indirect
 	github.com/goexl/exception v0.0.3 // indirect
-	github.com/goexl/gfx v0.2.5 // indirect
+	github.com/goexl/gfx v0.2.8 // indirect
 	github.com/goexl/gox v1.9.2 // indirect
 	github.com/goexl/mengpo v0.2.6 // indirect
 	github.com/goexl/structer v0.1.9 // indirect
 	github.com/goexl/xiren v0.0.8 // indirect
 	github.com/google/uuid v1.6.0 // indirect
+	github.com/harluo/config v0.0.2 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20250317134145-8bc96cf8fc35 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
-	github.com/pangum/config v0.1.0 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
 	github.com/rivo/uniseg v0.4.7 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
