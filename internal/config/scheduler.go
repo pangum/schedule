@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/harluo/boot"
+	"github.com/harluo/config"
 )
 
 type Scheduler struct {
@@ -11,9 +11,9 @@ type Scheduler struct {
 	Limit *Limit `json:"limit,omitempty"`
 }
 
-func newScheduler(config *boot.Config) (scheduler *Scheduler, err error) {
+func newScheduler(config *config.Getter) (scheduler *Scheduler, err error) {
 	scheduler = new(Scheduler)
-	err = config.Build().Get(&struct {
+	err = config.Get(&struct {
 		Scheduler *Scheduler `json:"scheduler,omitempty" valschedulerate:"required"`
 	}{
 		Scheduler: scheduler,
