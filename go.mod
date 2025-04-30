@@ -5,7 +5,6 @@ go 1.24
 require (
 	github.com/goexl/log v0.0.9
 	github.com/goexl/schedule v0.2.1
-	github.com/harluo/boot v1.7.1
 	github.com/harluo/config v0.0.4
 	github.com/harluo/di v0.0.5
 )
@@ -28,6 +27,7 @@ require (
 	github.com/goexl/structer v0.1.9 // indirect
 	github.com/goexl/xiren v0.0.8 // indirect
 	github.com/google/uuid v1.6.0 // indirect
+	github.com/harluo/boot v1.7.1 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20250317134145-8bc96cf8fc35 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
