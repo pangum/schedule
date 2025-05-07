@@ -23,11 +23,11 @@ require (
 	github.com/goexl/exception v0.0.3 // indirect
 	github.com/goexl/gfx v0.2.8 // indirect
 	github.com/goexl/gox v1.9.2 // indirect
-	github.com/goexl/mengpo v0.2.6 // indirect
+	github.com/goexl/mengpo v0.3.1 // indirect
 	github.com/goexl/structer v0.1.9 // indirect
 	github.com/goexl/xiren v0.0.8 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/harluo/boot v1.7.1 // indirect
+	github.com/harluo/boot v1.7.2 // indirect
 	github.com/leodido/go-urn v1.4.0 // indirect
 	github.com/lufia/plan9stats v0.0.0-20250317134145-8bc96cf8fc35 // indirect
 	github.com/mattn/go-runewidth v0.0.16 // indirect
@@ -47,8 +47,8 @@ require (
 	github.com/yusufpapurcu/wmi v1.2.4 // indirect
 	github.com/zs5460/art v0.3.0 // indirect
 	go.uber.org/dig v1.18.1 // indirect
-	golang.org/x/crypto v0.37.0 // indirect
-	golang.org/x/net v0.39.0 // indirect
-	golang.org/x/sys v0.32.0 // indirect
-	golang.org/x/text v0.24.0 // indirect
+	golang.org/x/crypto v0.38.0 // indirect
+	golang.org/x/net v0.40.0 // indirect
+	golang.org/x/sys v0.33.0 // indirect
+	golang.org/x/text v0.25.0 // indirect
 )
