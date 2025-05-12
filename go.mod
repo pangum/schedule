@@ -5,7 +5,7 @@ go 1.24
 require (
 	github.com/goexl/log v0.0.9
 	github.com/goexl/schedule v0.2.1
-	github.com/harluo/config v0.0.4
+	github.com/harluo/config v0.0.7
 	github.com/harluo/di v0.0.5
 )
 
